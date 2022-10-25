@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Building the Docs &mdash; Ivy 1.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="icon" type="image/png" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true">
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -106,31 +105,31 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../ivy"">Ivy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../mech"">Ivy mech</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vision"">Ivy vision</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../robot"">Ivy robot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gym"">Ivy gym</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../memory"">Ivy memory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../builder"">Ivy builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../models"">Ivy models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ecosystem"">Ivy ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy.html">Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_mech.html">Ivy mech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_vision.html">Ivy vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_robot.html">Ivy robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_gym.html">Ivy gym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_memory.html">Ivy memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_builder.html">Ivy builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_models.html">Ivy models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/ivy_ecosystem.html">Ivy ecosystem</a></li>
 </ul>
 
         </div>
@@ -230,7 +229,8 @@
 </section>
 <section id="dockerless-doc-building">
 <h2>Dockerless Doc-building<a class="headerlink" href="#dockerless-doc-building" title="Permalink to this heading"></a></h2>
-<p>First, change to the <cite>docs</cite> folder. Now, we need to create a virtual environment using either <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> or <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>:</p>
+<p>To build the Ivy documentation locally, we will need to clone both the <code class="code docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> and <code class="code docutils literal notranslate"><span class="pre">unifyai/ivy</span></code> repositories.
+After cloning repos, we need to create a virtual environment using either <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> or <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>:</p>
 <section id="using-miniconda">
 <h3>Using miniconda<a class="headerlink" href="#using-miniconda" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
@@ -279,7 +279,8 @@
 </div></blockquote>
 </li>
 </ol>
-<p>Next, execute the following command to build the docs from inside the virtual environment</p>
+<p>After setting up the virtual environment, we can build the documentation locally.
+Move to the <cite>ivy/docs</cite> folder in a terminal and execute the following command to build the docs from inside the virtual environment.</p>
 <ol class="arabic">
 <li><p>For Windows users</p>
 <blockquote>
@@ -303,6 +304,12 @@
 </div></blockquote>
 </li>
 </ol>
+<p>Assuming that we cloned the <cite>doc-builder</cite> and <cite>ivy</cite> repositories in the same folder, we can run <cite>make_docs_without_docker.sh</cite> as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash make_docs_without_docker.sh ../../doc-builder/
+</pre></div>
+</div>
+<p>You will now see the <cite>build</cite> folder where you can find generated <cite>html</cite> files.
+You can open them using any preferred browser and see how your changes affected the documentation pages.</p>
 </section>
 </section>
 <section id="working-of-the-documentation-building-pipeline">
